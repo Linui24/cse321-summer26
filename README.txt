@@ -1,18 +1,10 @@
 ======================================================================
-                  CSE321 Lab Term Project: SimpleFS
+                  CSE321 Lab Project: SimpleFS
                              Summer 2026
 ======================================================================
 
 ----------------------------------------------------------------------
-1. GROUP INFORMATION
-----------------------------------------------------------------------
-Group Members:
-  1. Md Ashraful Hoque          ID: 22101618
-  2. Mohammed Ishrak Faisal     ID: 23201583
-  3. Siddhartha Das             ID: 23101348
-
-----------------------------------------------------------------------
-2. IMPLEMENTATION OVERVIEW
+1. IMPLEMENTATION OVERVIEW
 ----------------------------------------------------------------------
 This project implements SimpleFS, an educational unmounted file system 
 in C. It manages a 256 KiB binary image (disk.img) divided into 64 
@@ -29,7 +21,7 @@ Key Components Implemented:
     creates root directory entries, and updates metadata accordingly.
 
 ----------------------------------------------------------------------
-3. COMPILATION INSTRUCTIONS
+2. COMPILATION INSTRUCTIONS
 ----------------------------------------------------------------------
 Compile both executable targets using standard C11 flags:
 
@@ -37,7 +29,7 @@ Compile both executable targets using standard C11 flags:
   gcc -Wall -Wextra -std=c11 simplefs_adder.c -o simplefs_adder
 
 ----------------------------------------------------------------------
-4. EXECUTION EXAMPLES
+3. EXECUTION EXAMPLES
 ----------------------------------------------------------------------
 1. Create a fresh empty SimpleFS image:
      ./simplefs_builder --image disk.img
@@ -53,22 +45,7 @@ Compile both executable targets using standard C11 flags:
      xxd -s 16384 -l 320 disk.img       # Root directory contents
 
 ----------------------------------------------------------------------
-5. MEMBER CONTRIBUTIONS
-----------------------------------------------------------------------
-  - Md Ashraful Hoque (22101618):
-    Designed and implemented simplefs_builder.c (Superblock initialization, 
-    bitmap setup, and root directory creation).
-
-  - Mohammed Ishrak Faisal (23201583):
-    Implemented directory search logic, updated root inode sizes, conducted 
-    hex-level validation (xxd verification), and prepared documentation.
-
-  - Siddhartha Das (23101348):
-    Implemented simplefs_adder.c core logic (First-fit inode & data block 
-    search algorithms, block copy handling, and boundary checks).
-
-----------------------------------------------------------------------
-6. KNOWN LIMITATIONS & PROBLEMS
+4. KNOWN LIMITATIONS & PROBLEMS
 ----------------------------------------------------------------------
   - Maximum file size is strictly limited to 12,288 bytes (3 direct blocks).
   - File names cannot exceed 58 characters.
